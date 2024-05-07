@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input,
+        textarea,
+        select {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type=radio],
+        input[type=checkbox] {
+            display: inline;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Formulario</h1>
+
+    <form  method="POST">
+        <input type="hidden" name="id" value="1">
+        <input type="text" name="nome">
+        <input type="password" name="senha">
+        <textarea name="bio" cols="30" rows="10"></textarea>
+        <div>
+            <input type="radio" name="tipo" value="Admin"> Admin
+            <input type="radio" name="tipo" value="Regular"> Regular
+            <input type="radio" name="tipo" value="Professor"> Professor
+        </div>
+        <div>
+            <input type="checkbox" name="Ativo">Ativo
+        </div>
+
+        <select name="estado">
+            <option value="">Selecione</option>
+            <option value="Goias">Goias</option>
+            <option value="Fortaleza">Fortaleza</option>
+            <option value="Parana">Parana</option>
+        </select>
+
+        <select name="interesses" multiple size="3">
+            <option value="js">javaScriipt</option>
+            <option value="java">java</option>
+            <option value="python">Python</option>
+            <option value="php">PHP</option>
+        </select>
+
+        <button formaction="http://localhost:8080/usuarios"="">incluir</button>
+        <button formaction="http://localhost:8080/usuarios/1">alterar</button>
+    </form>
+
+</body>
+
+</html>

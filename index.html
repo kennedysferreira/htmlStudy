@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicios HTML</title>
+    <style>
+        #conteudo {
+            padding: 30px 0px ;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Exercicios HTML
+    </header>
+    <nav>
+        <a href="exercicios/teste.html">00 - Teste</a> |
+        <a href="exercicios/texto01.html">01 - texto01</a> |
+        <a href="exercicios/texto02.html">02 - texto02</a> |
+        <a href="exercicios/lista.html">03 - lista</a> |
+        <a href="exercicios/listaAninhada.html">03 - listaAninhada</a> |
+        <a href="exercicios/links.html">05 - links</a> |
+        <a href="exercicios/tabela.html">06 - tabela</a> |
+        <a href="exercicios/formulario/form.html">07 - formulario</a> |
+        <a href="exercicios/imagens.html">08 - imagens</a> |
+        <a href="exercicios/video.html">09 - video</a>
+        <a href="exercicios/tagsNaoVisuais.html">10 - Tags nao visuais</a>
+
+    </nav>
+    <section id="conteudo"></section>
+    <footer>
+        
+        Curso de Web Moderno
+    </footer>
+    <script>
+        document.querySelectorAll('a').forEach(link => {
+            const conteudo = document.getElementById('conteudo')
+            const pegarResposta = resp => resp.text()
+            const mostrarHtml = html => conteudo.innerHTML = html
+            link.onclick = function(e){
+                e.preventDefault()
+                fetch(link.href) // e uma requisiçao ajax
+                    .then(pegarResposta)
+                    .then(mostrarHtml)
+            }
+        })
+    </script>
+</body>
+</html>
